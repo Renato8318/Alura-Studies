@@ -1,5 +1,5 @@
 import Item from './Item';
-import style from '..Lista.module.scss';
+import style from './Lista.module.scss';
 import { ITarefa } from '../../types/tarefa';
 
 
