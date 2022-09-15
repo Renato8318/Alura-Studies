@@ -5,14 +5,21 @@ import Lista from '../components/Lista';
 import { ITarefa } from '../types/tarefa';
 import style from './App.module.scss';
 
-
-
 function App() {
   const [tarefas, setTarefas] = useState<ITarefa[]>([]);
+  const [selecionado, setSelecionado] = useState<ITarefa>();
+
+  function selecionaTarefa(selecionaTarefa: ITarefa) {
+    setSelecionado(selecionaTarefa);
+  }
+
   return (
     <div className={style.AppStyle}>
       <Formulario  setTarefas={setTarefas} />
-      <Lista tarefas={tarefas} />
+      <Lista 
+      tarefas={tarefas}
+      selecionaTarefa={selecionaTarefa}
+      />
       <Cronometro />
     </div>
   );
